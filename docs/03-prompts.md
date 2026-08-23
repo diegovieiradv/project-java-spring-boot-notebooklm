@@ -207,7 +207,36 @@ Para cada experimento, o fluxo seguido foi:
 
 ---
 
-### Experimentos 4 e 5: — Similar estrutura acima —
+### Experimento 4: Prompt 4 — Revisão com Perguntas
+
+- **Status:** Executado ✅
+- **Prompt:** "Crie perguntas de revisão sobre os principais conceitos apresentados nas fontes e depois forneça um gabarito comentado."
+- **Objetivo:** Gerar perguntas de auto-revisão com gabaritos
+- **Resultado obtido:** 4 perguntas com gabarito detalhado:
+  1. **Integração e Persistência:** Como o Spring Data JPA simplifica o acesso a dados e qual validação realiza na inicialização?
+  2. **Clientes HTTP:** O que é o WebClient, em qual projeto está integrado e quais suas características?
+  3. **Observabilidade:** Quais ferramentas o Spring Boot Actuator oferece para produção?
+  4. **Empacotamento:** Quais tecnologias o Spring Boot oferece para empacotamento e imagens de contêiner?
+- **Análise de qualidade:**
+  - **Fidelidade às fontes:** Alta — respostas referenciam conceitos das 5 fontes curadas
+  - **Clareza:** Alta — perguntas objetivas e respostas bem estruturadas
+  - **Completude:** Média —only 4 perguntas, focadas em tópicos avançados
+  - **Utilidade prática:** Média — boas para revisão, mas faltam perguntas básicas
+  - **Formato:** Seguiu o formato solicitado (perguntas + gabarito)
+- **Limitações identificadas:**
+  - **Poucas perguntas** (apenas 4) — ideal seriam 6-8
+  - **Foco em tópicos avançados** — não há perguntas sobre conceitos básicos (Controllers, Services, IoC)
+  - **Sem perguntas sobre arquitetura em camadas** (Controller → Service → Repository)
+  - **Sem perguntas sobre DTOs, validação ou tratamento de exceções**
+  - **Sem variedade de formato** — todas são perguntas abertas, sem múltipla escolha ou verdadeiro/falso
+- **Prompt melhorado proposto:**
+  > "Crie 6 perguntas de revisão sobre os principais conceitos de Spring Boot para APIs REST. Distribua: 2 perguntas básicas (fundamentos), 2 intermediárias (desenvolvimento) e 2 avançadas (produção). Para cada pergunta, forneça um gabarito comentado de 2-3 linhas. Inclua pelo menos uma pergunta sobre a arquitetura em camadas (Controller/Service/Repository)."
+- **Resultado após mudança:** [Aguardando execução pelo usuário]
+- **Aprendizado:** Prompts de revisão funcionam melhor quando especificam: (1) número de perguntas, (2) distribuição por nível de dificuldade, (3) tópicos obrigatórios. Isso garante cobertura equilibrada dos conceitos fundamentais e avançados.
+
+---
+
+### Experimento 5: Prompt 5 — Identificação de Lacunas
 
 - **Status:** Pendente de execução
 
