@@ -164,7 +164,35 @@ Para cada experimento, o fluxo seguido foi:
 - **Melhoria observada:** O prompt melhorado adicionou 3 conceitos ausentes (DTOs, testes, documentação) e organizou em 3 fases mais equilibradas. A inclusão de "Inclua DTOs, testes e documentação" no prompt foi decisiva para preencher lacunas.
 - **Aprendizado:** Para prompts de roadmap, especificar o número de fases e incluir tópicos ausentes (DTOs, testes, documentação) melhora significativamente a completude da resposta. O NotebookLM responde bem a restrições estruturais (3 fases, 3-5 tópicos cada). Incluir tópicos ausentes diretamente no prompt ("Inclua X, Y e Z") é mais eficaz do que esperar que o modelo os identifique sozinho.
 
-### Experimentos 3 a 5: — Similar estrutura acima —
+### Experimento 3: Prompt 3 — Comparação de Camadas
+
+- **Status:** Executado ✅
+- **Prompt:** "Explique as responsabilidades das camadas Controller, Service e Repository e compare o papel de cada uma."
+- **Objetivo:** Comparar as três camadas centrais da arquitetura em Spring Boot
+- **Resultado obtido:** Resposta dividida em 3 seções:
+  1. **Controller (Web/HTTP Stack):** Mapeamento de requisições, extração de dados (`@RequestParam`, `@RequestBody`), manipulação de respostas (`@ResponseBody`, `ResponseEntity`), integração com Jackson JSON
+  2. **Repository (Data Access Stack):** Abstração de acesso a dados via Spring Data JPA, redução de boilerplate, consultas customizadas (`@Query`), paginação e auditoria
+  3. **Service:** Resposta identifica uma **lacuna nas fontes** — "as fontes fornecidas não definem nem descrevem as responsabilidades da camada Service ou de sua respectiva anotação (`@Service`)"
+- **Análise de qualidade:**
+  - **Fidelidade às fontes:** Alta — o modelo foi honesto ao identificar que as fontes não cobrem a camada Service
+  - **Clareza:** Alta — explicações técnicas bem estruturadas
+  - **Completude:** Média — Controller e Repository bem cobertos, mas Service incompleto por limitação das fontes
+  - **Utilidade prática:** Média — útil para entender Controller e Repository, mas não explica o fluxo completo
+  - **Formato:** Seguiu parcialmente — pediu comparação de 3 camadas, mas só comparou 2 por limitação das fontes
+- **Limitações identificadas:**
+  - **Lacuna crítica:** A camada Service não foi explicada porque as fontes curadas não a cobrem adequadamente
+  - Não apresenta o **fluxo completo** (Controller → Service → Repository)
+  - Não menciona **DTOs** como conceito de transferência entre camadas
+  - Não inclui **exemplos de código** ou diagramas
+  - A comparação ficou incompleta (só 2 das 3 camadas)
+- **Prompt melhorado proposto:**
+  > "Com base nas fontes fornecidas, explique as responsabilidades das camadas Controller, Service e Repository em uma API REST com Spring Boot. Para cada camada, inclua: (1) responsabilidade principal em uma frase, (2) anotações principais, (3) exemplo de código de uma linha. Se alguma camada não estiver bem coberta nas fontes, forneça uma definição geral baseada no padrão do Spring."
+- **Resultado após mudança:** [Aguardando execução pelo usuário]
+- **Aprendizado:** Quando o NotebookLM identifica uma lacuna nas fontes, ele é honesto e não inventa informações. Isso é positivo para autenticidade, mas limita a completude da resposta. O prompt melhorado solicita uma definição geral quando a fonte não cobre o tópico, forçando o modelo a preencher a lacuna com conhecimento geral do Spring.
+
+---
+
+### Experimentos 4 e 5: — Similar estrutura acima —
 
 - **Status:** Pendente de execução
 
