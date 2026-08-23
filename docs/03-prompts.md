@@ -96,8 +96,31 @@ Para cada experimento, o fluxo seguido foi:
   - Não lista métodos HTTP nem códigos de status
 - **Prompt melhorado proposto:**
   > "Com base exclusivamente nas fontes fornecidas, crie uma lista resumida (máximo 10 itens) dos conceitos essenciais de Spring Boot para criar uma API REST. Para cada conceito, inclua uma definição de uma linha e um exemplo de anotação ou classe quando aplicável."
-- **Resultado após mudança:** [Aguardando execução pelo usuário]
-- **Aprendizado:** Prompts que pedem "visão geral" devem impor limites claros (número de itens, tamanho da resposta, formato). Caso contrário, o NotebookLM tende a gerar respostas completas e extensas, o que é útil para estudo profundo, mas não para síntese inicial.
+- **Resultado após mudança:** Lista de exatamente 10 conceitos, cada um com definição de uma linha e anotação/classe de exemplo:
+  1. `@SpringBootApplication` — inicialização
+  2. `@Autowired` — injeção de dependências
+  3. `@Configuration` — classes de configuração
+  4. `@Controller` — controllers anotados
+  5. `@RequestBody` — leitura do corpo da requisição
+  6. `@ResponseBody` — escrita do corpo da resposta
+  7. `ResponseEntity` — controle completo de respostas
+  8. `@RequestParam` — extração de parâmetros da URL
+  9. `@Query` — camada de repositório JPA
+  10. `WebClient` — cliente HTTP reativo
+
+- **Comparação Original vs Melhorado:**
+
+| Aspecto | Prompt Original | Prompt Melhorado |
+|---------|-----------------|------------------|
+| Tamanho da resposta | ~2.000 palavras | ~300 palavras |
+| Formato | 4 pilares com sub-bullets | Lista de 10 itens |
+| Definições | Longas e detalhadas | Concisas (uma linha) |
+| Exemplos | Nenhum | Anotação/classe para cada item |
+| Foco | Abrangente (inclui WebFlux) | Apenas essenciais para REST |
+| Usabilidade para estudo | Densa, difícil de revisar | Rápida de revisar e memorizar |
+
+- **Melhoria observada:** O prompt melhorado produziu uma resposta 6x mais concisa, com formato de lista (mais fácil de revisar) e exemplos práticos de anotações. A imposição de "máximo 10 itens" e "definição de uma linha" foi decisiva para controlar a extensão da resposta.
+- **Aprendizado:** Prompts que pedem "visão geral" devem impor limites claros (número de itens, tamanho da resposta, formato). Caso contrário, o NotebookLM tende a gerar respostas completas e extensas, o que é útil para estudo profundo, mas não para síntese inicial. A restrição de formato (lista, X itens, Y palavras) é a ferramenta mais poderosa para controlar a saída do modelo.
 
 ### Experimento 2: Prompt 2 — Estrutura
 
