@@ -122,17 +122,30 @@ Para cada experimento, o fluxo seguido foi:
 - **Melhoria observada:** O prompt melhorado produziu uma resposta 6x mais concisa, com formato de lista (mais fácil de revisar) e exemplos práticos de anotações. A imposição de "máximo 10 itens" e "definição de uma linha" foi decisiva para controlar a extensão da resposta.
 - **Aprendizado:** Prompts que pedem "visão geral" devem impor limites claros (número de itens, tamanho da resposta, formato). Caso contrário, o NotebookLM tende a gerar respostas completas e extensas, o que é útil para estudo profundo, mas não para síntese inicial. A restrição de formato (lista, X itens, Y palavras) é a ferramenta mais poderosa para controlar a saída do modelo.
 
-### Experimento 2: Prompt 2 — Estrutura
+### Experimento 2: Prompt 2 — Estrutura de Aprendizagem
 
-- **Status:** Pendente de execução
+- **Status:** Executado ✅
 - **Prompt:** "Organize os conceitos de desenvolvimento de APIs REST com Spring Boot em uma sequência de aprendizado do básico ao intermediário."
-- **Objetivo:** Roadmap de estudo
-- **Resultado:** [Aguardando execução]
-- **Análise:** [Aguardando]
-- **Limitações:** [Aguardando]
-- **Prompt melhorado:** [Aguardando]
-- **Resultado após mudança:** [Aguardando]
-- **Aprendizado:** [Aguardando]
+- **Objetivo:** Roadmap de estudo ordenado
+- **Resultado obtido:** Resposta organizada em 2 fases:
+  - **Fase 1 — Fundamentos e Configuração Inicial (Básico):** Instalação, Sistemas de Build, `@SpringBootApplication`, IoC/DI, `@Configuration`/`@Bean`, Controllers/`@RequestParam`
+  - **Fase 2 — Desenvolvimento de APIs Robustas (Intermediário):** `@RequestBody`/`@ResponseBody`/`ResponseEntity`, Spring Data JPA, Validação (JSR-303), Tratamento de Exceções (Controller Advice), Configuração Externa/Profiles, Consumo de APIs (RestTemplate/WebClient), Spring Boot Actuator
+- **Análise de qualidade:**
+  - **Fidelidade às fontes:** Boa — conceitos alinhados com as 5 fontes curadas
+  - **Clareza:** Alta — progressão lógica do básico ao intermediário
+  - **Completude:** Média-alta — cobre a maioria dos conceitos, mas omite DTOs, testes e documentação (Swagger/OpenAPI)
+  - **Utilidade prática:** Alta — pode ser usado como roteiro de estudo real
+  - **Formato:** Seguiu o formato solicitado (sequência de aprendizado)
+- **Limitações identificadas:**
+  - Não menciona **DTOs** (Data Transfer Objects) como conceito de transferência de dados entre camadas
+  - Não inclui **testes** (unidade e integração) como etapa de aprendizado
+  - Não cita **documentação de API** (Swagger/OpenAPI) como ferramenta complementar
+  - Não menciona **CORS** nem **versionamento de API**
+  - As fases são amplas — poderiam ser mais granulares (ex: separar validação de tratamento de exceções)
+- **Prompt melhorado proposto:**
+  > "Organize os conceitos de desenvolvimento de APIs REST com Spring Boot em uma sequência de aprendizado em 3 fases: (1) Fundamentos, (2) Desenvolvimento, (3) Produção. Para cada fase, liste de 3 a 5 tópicos com uma descrição de uma linha cada. Inclua DTOs, testes e documentação."
+- **Resultado após mudança:** [Aguardando execução pelo usuário]
+- **Aprendizado:** Para prompts de roadmap, especificar o número de fases e incluir tópicos ausentes (DTOs, testes, documentação) melhora significativamente a completude da resposta. O NotebookLM responde bem a restrições estruturais (3 fases, 3-5 tópicos cada).
 
 ### Experimentos 3 a 5: — Similar estrutura acima —
 
