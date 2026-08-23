@@ -2,11 +2,17 @@
 
 ## Sobre o Projeto
 
-Um caderno temático para consolidação de conhecimentos em Java e Spring Boot aplicados ao desenvolvimento de APIs REST, utilizando o NotebookLM como ferramenta de aprendizagem ativa.
+Um caderno temático para consolidação de conhecimentos em Java e Spring Boot aplicados ao desenvolvimento de APIs REST, utilizando o NotebookLM como ferramenta de aprendizagem ativa. Este projeto foi desenvolvido como parte do desafio da DIO (Digital Innovation One).
+
+### Contexto e Objetivos
+
+- **Tema:** Java e Spring Boot para Desenvolvimento de APIs REST
+- **Objetivo:** Consolidar conhecimentos fundamentais por meio de um caderno temático no NotebookLM, com curadoria de fontes, experimentos de engenharia de prompts, documentação de dificuldades e um miniguia de estudo.
+- **Ferramentas:** NotebookLM, Git, GitHub, Markdown, Java, Spring Boot
 
 ## Objetivo
 
-Desenvolver um miniguia estruturado sobre Java e Spring Boot para APIs REST, com curadoria de fontes, experimentos de engenharia de prompts, documentação de dificuldades (cicatrizes) e um glossário de termos técnicos.
+Desenvolver um miniguia estruturado sobre Java e Spring Boot para APIs REST, com curadoria de fontes, experimentos de engenharia de prompts, documentação de dificuldades (cicatrizes) e um glossário de termos técnicos. Este trabalho segue os requisitos do desafio da DIO sobre aprendizagem ativa com NotebookLM.
 
 ## Tema Escolhido
 
