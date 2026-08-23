@@ -73,15 +73,31 @@ Para cada experimento, o fluxo seguido foi:
 
 ### Experimento 1: Prompt 1 — Visão Geral
 
-- **Status:** Pendente de execução
+- **Status:** Executado ✅
 - **Prompt:** "Com base exclusivamente nas fontes fornecidas, explique os principais conceitos de Spring Boot necessários para desenvolver uma API REST."
-- **Objetivo:** Resumo de alto nível
-- **Resultado:** [Aguardando execução pelo usuário]
-- **Análise:** [Aguardando]
-- **Limitações:** [Aguardando]
-- **Prompt melhorado:** [Aguardando]
-- **Resultado após mudança:** [Aguardando]
-- **Aprendizado:** [Aguardando]
+- **Objetivo:** Resumo de alto nível dos conceitos essenciais
+- **Resultado obtido:** Resposta extensa (cerca de 2.000 palavras), dividida em 4 pilares:
+  1. Inicialização e Configuração (IoC, Injeção de Dependência, `@SpringBootApplication`, Auto-configuração, Starters)
+  2. Desenvolvimento de Endpoints (Spring MVC, Controllers, `@RequestBody`, `@RequestParam`, Jackson JSON, Validação, Exceções, CORS)
+  3. Persistência de Dados (Spring Data JPA, Repositórios, `@Query`, SQL/NoSQL)
+  4. Consumo de APIs (RestTemplate, WebClient)
+- **Análise de qualidade:**
+  - **Fidelidade às fontes:** Boa — conceitos como auto-configuração, Controllers e Spring Data JPA estão bem representados nas fontes curadas.
+  - **Clareza:** Média — texto longo e técnico, com many sub-bullets. Difícil de absorver como "visão geral".
+  - **Completude:** Alta — cobre a maioria dos conceitos pedidos, mas não menciona DTOs, camada de Service isoladamente, ou métodos HTTP específicos (GET, POST, PUT, DELETE).
+  - **Utilidade prática:** Média — bom material para aprofundamento, mas excessivamente denso para uma introdução.
+  - **Formato:** Seguiu o formato solicitado (explicação textual), mas não foi conciso como esperado para um "visão geral".
+- **Limitações identificadas:**
+  - Resposta muito longa para um prompt que pede "visão geral"
+  - Não menciona a arquitetura em camadas (Controller → Service → Repository) explicitamente como conceito estrutural
+  - Não inclui DTOs (Data Transfer Objects) como conceito importante
+  - Cita WebFlux (pilha reativa) — possivelmente fora do escopo básico de "API REST com Spring Boot"
+  - Não apresenta exemplos de código ou snippets curtos
+  - Não lista métodos HTTP nem códigos de status
+- **Prompt melhorado proposto:**
+  > "Com base exclusivamente nas fontes fornecidas, crie uma lista resumida (máximo 10 itens) dos conceitos essenciais de Spring Boot para criar uma API REST. Para cada conceito, inclua uma definição de uma linha e um exemplo de anotação ou classe quando aplicável."
+- **Resultado após mudança:** [Aguardando execução pelo usuário]
+- **Aprendizado:** Prompts que pedem "visão geral" devem impor limites claros (número de itens, tamanho da resposta, formato). Caso contrário, o NotebookLM tende a gerar respostas completas e extensas, o que é útil para estudo profundo, mas não para síntese inicial.
 
 ### Experimento 2: Prompt 2 — Estrutura
 
