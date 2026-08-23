@@ -144,8 +144,25 @@ Para cada experimento, o fluxo seguido foi:
   - As fases são amplas — poderiam ser mais granulares (ex: separar validação de tratamento de exceções)
 - **Prompt melhorado proposto:**
   > "Organize os conceitos de desenvolvimento de APIs REST com Spring Boot em uma sequência de aprendizado em 3 fases: (1) Fundamentos, (2) Desenvolvimento, (3) Produção. Para cada fase, liste de 3 a 5 tópicos com uma descrição de uma linha cada. Inclua DTOs, testes e documentação."
-- **Resultado após mudança:** [Aguardando execução pelo usuário]
-- **Aprendizado:** Para prompts de roadmap, especificar o número de fases e incluir tópicos ausentes (DTOs, testes, documentação) melhora significativamente a completude da resposta. O NotebookLM responde bem a restrições estruturais (3 fases, 3-5 tópicos cada).
+- **Resultado após mudança:** Resposta organizada em 3 fases com 11 tópicos no total:
+  - **Fase 1 — Fundamentos:** Build/Inicialização, IoC/DI, `@SpringBootApplication`, Controllers/`@RequestParam`
+  - **Fase 2 — Desenvolvimento:** DTOs/Jackson, Validação (JSR-303), Spring Data JPA, Testes (MockMvc/WebTestClient/Testcontainers)
+  - **Fase 3 — Produção:** Configuração Externa/Profiles, Actuator, Empacotamento/Docker/GraalVM, Documentação (Spring REST Docs)
+
+- **Comparação Original vs Melhorado:**
+
+| Aspecto | Prompt Original | Prompt Melhorado |
+|---------|-----------------|------------------|
+| Número de fases | 2 (Básico, Intermediário) | 3 (Fundamentos, Desenvolvimento, Produção) |
+| Total de tópicos | 13 | 11 |
+| DTOs | ❌ Não mencionado | ✅ Incluído explicitamente |
+| Testes | ❌ Não mencionado | ✅ MockMvc, WebTestClient, Testcontainers |
+| Documentação | ❌ Não mencionado | ✅ Spring REST Docs |
+| Containerização | ❌ Não mencionado | ✅ Docker, Cloud Native Buildpacks, GraalVM |
+| Granularidade | Fases amplas | Fases mais equilibradas |
+
+- **Melhoria observada:** O prompt melhorado adicionou 3 conceitos ausentes (DTOs, testes, documentação) e organizou em 3 fases mais equilibradas. A inclusão de "Inclua DTOs, testes e documentação" no prompt foi decisiva para preencher lacunas.
+- **Aprendizado:** Para prompts de roadmap, especificar o número de fases e incluir tópicos ausentes (DTOs, testes, documentação) melhora significativamente a completude da resposta. O NotebookLM responde bem a restrições estruturais (3 fases, 3-5 tópicos cada). Incluir tópicos ausentes diretamente no prompt ("Inclua X, Y e Z") é mais eficaz do que esperar que o modelo os identifique sozinho.
 
 ### Experimentos 3 a 5: — Similar estrutura acima —
 
