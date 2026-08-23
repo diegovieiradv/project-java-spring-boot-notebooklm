@@ -254,7 +254,41 @@ Para cada experimento, o fluxo seguido foi:
 
 ### Experimento 5: Prompt 5 — Identificação de Lacunas
 
-- **Status:** Pendente de execução
+- **Status:** Executado ✅
+- **Prompt:** "Com base nas fontes, identifique conceitos importantes sobre APIs REST com Spring Boot que ainda não foram abordados nesta conversa."
+- **Objetivo:** Descobrir o que pode ter sido esquecido ou subrepresentado
+- **Resultado obtido:** 6 conceitos identificados como não abordados:
+  1. **Spring Data REST** — exposição automática de repositórios como endpoints HTTP
+  2. **Spring HATEOAS** — hypermedia como nível mais alto de maturidade REST
+  3. **Segurança Avançada** — OAuth2 Resource Server, Authorization Server, SAML 2.0
+  4. **Graceful Shutdown** — desligamento gracioso em ambientes de nuvem
+  5. **CORS, Versionamento e HTTP Caching** — recursos embutidos nos controllers
+  6. **Servidores Web Embutidos** — Tomcat, Jetty, Netty auto-configurados
+- **Análise de qualidade:**
+  - **Fidelidade às fontes:** Alta — conceitos reais do ecossistema Spring Boot
+  - **Clareza:** Alta — explicações técnicas precisas
+  - **Completude:** Alta — identificou lacunas reais nas conversas anteriores
+  - **Utilidade prática:** Alta — material valioso para expansão do miniguia
+  - **Formato:** Lista numerada com explicações detalhadas
+- **Limitações identificadas:**
+  - Alguns tópicos (OAuth2/SAML, HATEOAS) são avançados demais para o escopo básico do projeto
+  - Não mencionou DTOs (já abordados no Prompt 2 melhorado)
+  - Não mencionou Tratamento de Exceções (já abordado no Prompt 2)
+- **Aprendizado:** O prompt de identificação de lacunas é extremamente útil para completar um miniguia. Ele revelou tópicos importantes que não foram cobertos nas conversas anteriores, permitindo decidir quais incluir na versão final do material de estudo. É recomendado usá-lo como etapa final de qualquer processo de estudo com NotebookLM.
+
+---
+
+## Resumo dos 5 Experimentos
+
+| # | Prompt | Resultado | Melhoria Principal |
+|---|--------|-----------|-------------------|
+| 1 | Visão Geral | Lista de 10 conceitos | Reduziu de ~2.000 para ~300 palavras |
+| 2 | Estrutura de Aprendizagem | 3 fases com 11 tópicos | Adicionou DTOs, testes, documentação |
+| 3 | Comparação de Camadas | 3 camadas completas | Preencheu lacuna do Service layer |
+| 4 | Revisão com Perguntas | 6 perguntas equilibradas | Distribuição por nível de dificuldade |
+| 5 | Identificação de Lacunas | 6 tópicos não abordados | Completou lacunas do estudo |
+
+**Conclusão geral:** A engenharia de prompts é uma etapa essencial. Prompts bem estruturados com restrições claras (número de itens, formato, tópicos obrigatórios) produzem respostas significativamente mais úteis para estudo.
 
 ---
 
