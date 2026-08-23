@@ -187,8 +187,23 @@ Para cada experimento, o fluxo seguido foi:
   - A comparação ficou incompleta (só 2 das 3 camadas)
 - **Prompt melhorado proposto:**
   > "Com base nas fontes fornecidas, explique as responsabilidades das camadas Controller, Service e Repository em uma API REST com Spring Boot. Para cada camada, inclua: (1) responsabilidade principal em uma frase, (2) anotações principais, (3) exemplo de código de uma linha. Se alguma camada não estiver bem coberta nas fontes, forneça uma definição geral baseada no padrão do Spring."
-- **Resultado após mudança:** [Aguardando execução pelo usuário]
-- **Aprendizado:** Quando o NotebookLM identifica uma lacuna nas fontes, ele é honesto e não inventa informações. Isso é positivo para autenticidade, mas limita a completude da resposta. O prompt melhorado solicita uma definição geral quando a fonte não cobre o tópico, forçando o modelo a preencher a lacuna com conhecimento geral do Spring.
+- **Resultado após mudança:** Resposta completa com 3 camadas explicadas, cada uma com: responsabilidade principal, anotações principais e exemplo de código:
+  - **Controller:** Expõe endpoints HTTP, recebe requisições, valida dados, retorna respostas. Anotações: `@RestController`, `@RequestMapping`, `@RequestBody`, `@RequestParam`. Exemplo: `@PostMapping("/produtos") public ResponseEntity<Produto> criar(@RequestBody Produto p) { ... }`
+  - **Service:** Centraliza regras de negócio (padrão geral, não coberto pelas fontes). Anotações: `@Service`, `@Transactional`. Exemplo: `@Transactional public Produto salvar(Produto p) { return repository.save(p); }`
+  - **Repository:** Abstrai acesso a dados via Spring Data JPA. Anotações: `@Repository`, `@Query`. Exemplo: `public interface ProdutoRepository extends JpaRepository<Produto, Long> { @Query("SELECT p FROM Produto p WHERE p.nome = :nome") List<Produto> buscarPorNome(String nome); }`
+
+- **Comparação Original vs Melhorado:**
+
+| Aspecto | Prompt Original | Prompt Melhorado |
+|---------|-----------------|------------------|
+| Camadas explicadas | 2 (Controller, Repository) | 3 (Controller, Service, Repository) |
+| Service layer | ❌ "Lacuna nas Fontes" | ✅ Definição geral + anotações |
+| Exemplos de código | ❌ Nenhum | ✅ Um para cada camada |
+| Estrutura | Texto descritivo | Responsabilidade + Anotações + Código |
+| Fluidez do conteúdo | Técnico mas incompleto | Completo e didático |
+
+- **Melhoria observada:** O prompt melhorado produziu uma resposta **significativamente mais completa**: explicou todas as 3 camadas, incluiu exemplos de código e manteve a honestidade sobre a lacuna nas fontes. A solicitação "Se alguma camada não estiver bem coberta nas fontes, forneça uma definição geral" foi decisiva para preencher a lacuna sem comprometer a autenticidade.
+- **Aprendizado:** Quando o NotebookLM identifica uma lacuna nas fontes, ele é honesto e não inventa informações. Isso é positivo para autenticidade, mas limita a completude da resposta. O prompt melhorado solicita uma definição geral quando a fonte não cobre o tópico, forçando o modelo a preencher a lacuna com conhecimento geral do Spring. A estrutura "responsabilidade + anotações + código" melhora a usabilidade para estudo.
 
 ---
 
