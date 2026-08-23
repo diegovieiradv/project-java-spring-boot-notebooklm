@@ -231,8 +231,24 @@ Para cada experimento, o fluxo seguido foi:
   - **Sem variedade de formato** — todas são perguntas abertas, sem múltipla escolha ou verdadeiro/falso
 - **Prompt melhorado proposto:**
   > "Crie 6 perguntas de revisão sobre os principais conceitos de Spring Boot para APIs REST. Distribua: 2 perguntas básicas (fundamentos), 2 intermediárias (desenvolvimento) e 2 avançadas (produção). Para cada pergunta, forneça um gabarito comentado de 2-3 linhas. Inclua pelo menos uma pergunta sobre a arquitetura em camadas (Controller/Service/Repository)."
-- **Resultado após mudança:** [Aguardando execução pelo usuário]
-- **Aprendizado:** Prompts de revisão funcionam melhor quando especificam: (1) número de perguntas, (2) distribuição por nível de dificuldade, (3) tópicos obrigatórios. Isso garante cobertura equilibrada dos conceitos fundamentais e avançados.
+- **Resultado após mudança:** 6 perguntas distribuídas em 3 fases, com gabarito comentado:
+  - **Fase 1 — Fundamentos (Básicas):** Questão 1 (`@SpringBootApplication`), Questão 2 (Arquitetura em Camadas — Controller/Repository)
+  - **Fase 2 — Desenvolvimento (Intermediárias):** Questão 3 (Spring Data JPA), Questão 4 (Testes — MockMvc/WebTestClient)
+  - **Fase 3 — Produção (Avançadas):** Questão 5 (Spring Boot Actuator), Questão 6 (Empacotamento/GraalVM/Checkpoint)
+
+- **Comparação Original vs Melhorado:**
+
+| Aspecto | Prompt Original | Prompt Melhorado |
+|---------|-----------------|------------------|
+| Número de perguntas | 4 | 6 |
+| Distribuição | Todas intermediárias/avançadas | 2 básicas + 2 intermediárias + 2 avançadas |
+| Arquitetura em camadas | ❌ Não incluída | ✅ Questão 2 (Controller/Repository) |
+| Testes | ❌ Não incluído | ✅ Questão 4 (MockMvc/WebTestClient) |
+| Cobertura | Focada em tópicos avançados | Equilibrada (fundamentos → produção) |
+| Estrutura | Perguntas soltas | Organizadas por fase |
+
+- **Melhoria observada:** O prompt melhorado produziu **50% mais perguntas** (6 vs 4) com **distribuição equilibrada** por nível de dificuldade. A inclusão da Questão 2 sobre arquitetura em camadas atendeu diretamente ao pedido do prompt. A estrutura por fases facilita o uso como material de estudo progressivo.
+- **Aprendizado:** Prompts de revisão funcionam melhor quando especificam: (1) número de perguntas, (2) distribuição por nível de dificuldade, (3) tópicos obrigatórios. Isso garante cobertura equilibrada dos conceitos fundamentais e avançados. A solicitação explícita "Inclua pelo menos uma pergunta sobre arquitetura em camadas" foi decisiva para preencher essa lacuna.
 
 ---
 
