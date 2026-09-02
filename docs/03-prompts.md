@@ -69,7 +69,7 @@ Para cada experimento, o fluxo seguido foi:
 
 ---
 
-## Registros de Experimentos (em construção)
+## Registros de Experimentos
 
 ### Experimento 1: Prompt 1 — Visão Geral
 

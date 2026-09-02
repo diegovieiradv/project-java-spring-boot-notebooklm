@@ -8,7 +8,7 @@ Este projeto foi desenvolvido como parte do desafio da DIO (Digital Innovation O
 
 **"Java e Spring Boot para Desenvolvimento de APIs REST"**
 
-A escolha desse tema responde à demanda prática de desenvolvedores que precisam dominar o ecossistema Spring Boot para criar APIs robustas, escaláveis e segurias. Spring Boot é o framework mais adotado na indústria Java para desenvolvimento rápido de microserviços e APIs, abstraindo grande parte da configuração complexa do Spring Framework tradicional.
+A escolha desse tema responde à demanda prática de desenvolvedores que precisam dominar o ecossistema Spring Boot para criar APIs robustas, escaláveis e seguras. Spring Boot é o framework mais adotado na indústria Java para desenvolvimento rápido de microserviços e APIs, abstraindo grande parte da configuração complexa do Spring Framework tradicional.
 
 ## Justificativa da Escolha
 
@@ -29,8 +29,10 @@ Criar um caderno temático no NotebookLM que consolide conhecimentos fundamentai
 
 ## Conhecimentos a Consolidar
 
+> **Nota:** Este material é baseado em Spring Boot 3.x, a versão LTS mais recente do ecossistema Spring.
+
 - Java aplicado ao back-end (sintaxe avançada, features modernas);
-- Spring Framework —Inversão de controle e injeção de dependência;
+- Spring Framework — Inversão de controle e injeção de dependência;
 - Spring Boot — inicialização acelerada, auto-configuração;
 - Arquitetura em camadas — separação de responsabilidades;
 - Controller — recebimento e roteamento de requisições HTTP;
@@ -42,12 +44,12 @@ Criar um caderno temático no NotebookLM que consolide conhecimentos fundamentai
 - Tratamento de exceções — handlers global, respostas de erro consistentes;
 - Spring Data JPA — mapeamento objeto-relacional, consultas;
 - Persistência — entidade, tabela, chaves estrangeiras;
-- Boas práticas de API — versionamento, documentação, versionamento;
+- Boas práticas de API — versionamento, documentação;
 - Testes — unidade e integração com Spring Test;
 
 ## Como o NotebookLM será usado como ferramenta de aprendizagem ativa
 
-O NotebookLM será employed da seguinte forma:
+O NotebookLM será utilizado da seguinte forma:
 
 1. **Síntese de fontes** — alimentar o NotebookLM com documentos oficiais e artigos sobre cada tópico, pedindo resumos executivos e exemplos de código simplificados.
 2. **Geração de perguntas de revisão** — utilizar prompts específicos para que o modelo gere perguntas e gabaritos sobre cada conceito.

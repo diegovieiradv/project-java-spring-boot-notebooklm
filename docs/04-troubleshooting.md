@@ -11,7 +11,7 @@ Este documento registra as dificuldades reais encontradas durante os experimento
 **Prompt utilizado:**
 > "Com base exclusivamente nas fontes fornecidas, explique os principais conceitos de Spring Boot necessários para desenvolver uma API REST."
 
-**Resultado observado:** Resposta dividida em 4 pilares com muitos sub-bullets, muito densa para吸收ção inicial.
+**Resultado observado:** Resposta dividida em 4 pilares com muitos sub-bullets, muito densa para absorção inicial.
 
 **Hipótese da causa:** O prompt não impunha limites claros de tamanho ou formato. O NotebookLM tende a gerar respostas completas e detalhadas quando não há restrições.
 
@@ -92,7 +92,7 @@ Este documento registra as dificuldades reais encontradas durante os experimento
 
 ---
 
-## Cicatriz 5: Resposta Muito Técnica para Iniciantes
+## Cicatriz 5: Resposta Muito Técnica para Iniciantes — Hipótese
 
 **Problema:** Algumas respostas do NotebookLM são excessivamente técnicas e usam termos que podem não ser familiares para quem está começando (ex: "pilha Servlet", "Reactor", "codecs").
 
@@ -112,7 +112,7 @@ Este documento registra as dificuldades reais encontradas durante os experimento
 
 ---
 
-## Cicatriz 6: Formato de Resposta Inadequado
+## Cicatriz 6: Formato de Resposta Inadequado — Hipótese
 
 **Problema:** O NotebookLM às vezes gera respostas em formato textual longo quando o ideal seria tabela, lista ou comparação lado a lado.
 
@@ -126,7 +126,7 @@ Este documento registra as dificuldades reais encontradas durante os experimento
 
 **Novo prompt:** (implementado nos prompts melhorados)
 
-**Resultado após a migrationBuilder:** Respostas em formato de lista ou tabela quando solicitado.
+**Resultado após a mudança:** Respostas em formato de lista ou tabela quando solicitado.
 
 **Aprendizado obtido:** O formato da resposta é tão importante quanto o conteúdo. Sempre especificar o formato desejado (tabela, lista, comparação lado a lado, etc.) para garantir usabilidade.
 

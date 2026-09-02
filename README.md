@@ -181,7 +181,7 @@ java-spring-boot-notebooklm/
    - Siga o formato de `docs/04-troubleshooting.md`
 
 5. **Usar a miniguia para revisão:**
-   - Revise os 10 conceitos essenciais
+   - Revise os 15 conceitos essenciais
    - Teste-se com as perguntas de revisão
    - Use os prompts reutilizáveis para novos estudos
 
@@ -198,6 +198,8 @@ java-spring-boot-notebooklm/
 ---
 
 ## Status do Projeto
+
+**Data de criação:** 2025-01-15
 
 | Etapa | Status |
 |-------|--------|

@@ -183,22 +183,22 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 **Exemplo:**
 ```java
 // DTO de entrada
+@Data
 public class UsuarioDTO {
     @NotBlank(message = "Nome é obrigatório")
     private String nome;
 
     @Email(message = "Email inválido")
     private String email;
-    // getters e setters
 }
 
 // DTO de saída
+@Data
 public class UsuarioResponseDTO {
     private Long id;
     private String nome;
     private String email;
     private LocalDateTime criadoEm;
-    // getters e setters
 }
 ```
 
@@ -309,6 +309,9 @@ public class GlobalExceptionHandler {
 
 **Exemplo:**
 ```java
+@Getter
+@Setter
+@NoArgsConstructor
 @Entity
 @Table(name = "usuarios")
 public class Usuario {
@@ -327,9 +330,31 @@ public class Usuario {
     private Boolean ativo = true;
 
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
-    private List<_pedido> pedidos;
+    private List<Pedido> pedidos;
+}
+
+@Getter
+@Setter
+@NoArgsConstructor
+@Entity
+@Table(name = "pedidos")
+public class Pedido {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "usuario_id")
+    private Usuario usuario;
+
+    private BigDecimal valorTotal;
+    private String status;
+    private LocalDateTime dataPedido;
 }
 ```
+
+*Em entidades JPA prefira `@Getter/@Setter` a `@Data` para evitar problemas com `equals/hashCode` e coleções lazy*
 
 **Configuração em application.properties:**
 ```properties
@@ -360,7 +385,7 @@ spring.jpa.show-sql=true
 
 ## 12. Resumo para Revisão
 
-### 10 Conceitos Essenciais
+### 15 Conceitos Essenciais
 
 | # | Conceito | Anotação/Classe |
 |---|----------|-----------------|
@@ -374,6 +399,11 @@ spring.jpa.show-sql=true
 | 8 | Repositório JPA | `@Repository` / `@Query` |
 | 9 | Validação | `@Valid` / `@NotBlank` |
 | 10 | Tratamento de Erros | `@RestControllerAdvice` / `@ExceptionHandler` |
+| 11 | Boas Práticas | `/api/v1/`, DTOs, HTTPS |
+| 12 | Paginação | `Pageable`, `Page<T>` |
+| 13 | Propriedades Externas | `application.properties` / `application.yml` + `@Value` / `@ConfigurationProperties` |
+| 14 | Observabilidade (Actuator) | `/actuator/health`, `/actuator/metrics` |
+| 15 | Cliente HTTP | `WebClient` / `RestTemplate` |
 
 ### Fluxo de uma Requisição
 

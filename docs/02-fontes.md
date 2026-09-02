@@ -48,7 +48,7 @@ Este documento lista de 3 a 5 fontes abertas (texto ou PDF) confiáveis sobre Ja
 
 ---
 
-## Fonte 5: RestTemplate vs WebClient (Spring Docs)
+## Fonte 5: WebClient (Spring Docs)
 
 - **Título:** Consuming REST Web Services — Spring Framework Reference
 - **Instituição/Autor:** Spring Project
